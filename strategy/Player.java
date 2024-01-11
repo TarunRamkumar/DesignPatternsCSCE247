@@ -1,11 +1,12 @@
 package strategy;
+import java.util.Random;
 
 public abstract class Player {
     private String firstName;
     private String lastName;
-    private abstract DefenceBehavior defenceBehavior;
-    private abstract OffenceBehavior offenceBehavior;
-    private abstract Random rand;
+    protected DefenceBehavior defenceBehavior;
+    protected OffenceBehavior offenceBehavior;
+    protected Random rand = new Random();
 
     public Player(String firstName, String lastName)
     {
@@ -14,6 +15,20 @@ public abstract class Player {
         
     }
 
+    public abstract void setDefenceBehavior();
 
+    public abstract void setOffenceBehavior();
 
+    public String play(boolean possesion)
+    {
+        if(possesion)
+            return offenceBehavior.play();
+        
+            return defenceBehavior.play();
+    }
+
+    public String toString()
+    {
+        return firstName + " " + lastName;
+    }
 }

@@ -18,7 +18,7 @@ public abstract class Player {
     public abstract void setDefenceBehavior();
 
     public abstract void setOffenceBehavior();
-
+ 
     public String play(boolean possesion)
     {
         if(possesion)

@@ -15,6 +15,7 @@ public class Police implements Observer {
         this.locations = new ArrayList<String>();
         this.people = new ArrayList<String>();
         cook.registerObserver(this);
+        notes = new String();
     }
 
 
@@ -22,7 +23,7 @@ public class Police implements Observer {
     public void update(String location, String description, ArrayList<String> accomplices) {
         locations.add(location);
         people.addAll(accomplices);
-        notes += "\n" + description;
+        notes += "- " + description + "\n";
 
 
     }
@@ -30,10 +31,31 @@ public class Police implements Observer {
     @Override
     public String getLog() {
         // TODO Auto-generated method stub
+        for(int i = 0; i < people.size()-1; i++)
+        {
+            for(int j = i+1; j < people.size();j++)
+            {
+                if(people.get(i).equals(people.get(j)))
+                {
+                    people.remove(j);
+                    
+                }
+            }
+        }
+        String loc = new String(); 
+        String peop = new String();
+        for(String l : locations)
+        {
+            loc += "- " + locations.get(locations.indexOf(l)) + "\n";
+        }
+        for(String p : people)
+        {
+            peop += "- " + people.get(people.indexOf(p)) + "\n";
+        }
+        return "Locations: \n" + loc +
+        "\nNotes:\n"+ notes +  
+        "\nAccomplices:\n" + peop;
         
-        return "Locations: \n" + locations.toString() + 
-        "\nAccomplices:\n" + people.toString() + 
-        "\nNotes: \n"+ notes;
     }
     
 }

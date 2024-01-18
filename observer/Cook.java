@@ -39,7 +39,7 @@ public class Cook implements Subject{
 
     public void enterSighting(String location, String description, String accomplices)
     {
-        this.notifyObservers(location, description, new ArrayList<>(Arrays.asList(accomplices.split(","))));
+        this.notifyObservers(location, description, new ArrayList<>(Arrays.asList(accomplices.split(", "))));
     }
 
     public String getName()

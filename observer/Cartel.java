@@ -25,10 +25,10 @@ public class Cartel implements Observer{
         for(Sighting s : sightings)
         {
             
-            log+= s.getLocation() + ", (" + s.getDetails() + "), with" + s.getAccomplices() + "\n";
+            log+= s.getLocation() + " (" + s.getDetails() + "), with" + s.getAccomplices() + "\n";
            
         }
         return log;
     }
-    //Car Wash (Laundering Money), with Wife, Client
+    
 }

@@ -1,6 +1,13 @@
 package strategy;
-
+/**
+ * The behavior players have whilst blocking goals. Implements both Offence and Defence behavior. 
+ * @author Tarun
+ */
 public class BlockGoalBehavior implements OffenceBehavior, DefenceBehavior {
+    /**
+     * Implements the play() method from both OffenceBehavior and DefenceBehavior. Chooses randomly from a list of String representations representing a player's actions. 
+     * @return A string representation of the player's block goal action
+     */
     public String play()
     {
         switch((int)Math.floor(Math.random() * 4)) {

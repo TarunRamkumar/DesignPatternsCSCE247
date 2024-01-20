@@ -1,6 +1,10 @@
 package strategy;
 
 public class BlockBehavior implements DefenceBehavior{
+    /**
+     * Creates a new class that contains a player's behavior whilst blocking, implenting the Defence Behavior interface. 
+     * @
+     */
     public String play()
     {
         switch((int)Math.floor(Math.random() * 3)) {

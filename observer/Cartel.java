@@ -16,7 +16,7 @@ public class Cartel implements Observer{
     {
         this.cook = cook;
         sightings = new ArrayList<Sighting>();
-        cook.registerObserver(this);
+        this.cook.registerObserver(this);
     }
     /**
      * Updates the Cartel on a sighting of the cook.

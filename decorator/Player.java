@@ -2,18 +2,18 @@ package decorator;
 
 import java.util.ArrayList;
 
-public class Player 
+public abstract class Player 
 {
-    private String name;
-    private ArrayList<String> lines;
+    protected String name;
+    protected ArrayList<String> lines;
 
     public Player(ArrayList<String> lines, String name)
     {
         if(name == null)
-            this.name = "No name"
+            this.name = "No name";
         else
             this.name = name;
-        this.lines = new ArrayList<String>().addAll(lines);
+        this.lines = lines;
     }
 
     public String getName()
@@ -23,7 +23,10 @@ public class Player
 
     public String toString()
     {
-        return 
+        String player = new String();
+        for(String s : lines)
+            player += s+"\n";
+        return player;
     }
 
 

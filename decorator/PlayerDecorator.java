@@ -1,5 +1,6 @@
 package decorator;
 import java.util.ArrayList;
+import java.lang.StringBuffer;
 public abstract class PlayerDecorator extends Player {
     private Player player;
 
@@ -15,13 +16,23 @@ public abstract class PlayerDecorator extends Player {
         {
             if(!lines.get(i).equals(decor.get(i)))
             {
-                char[] newline = lines.get(i).toCharArray();
-                for(int j = 0; j < newline.length; j++)
+                int linesLength = lines.get(i).length();
+                int decorLength = decor.get(i).length();
+                int size = Math.max(linesLength, decorLength);
+
+                StringBuffer newline = new StringBuffer(lines.get(i)), decorline = new StringBuffer(decor.get(i));
+
+                newline.setLength(size);
+                decorline.setLength(size);
+                
+                for(int j = 0; j < size; j++)
                 {
-                    if(newline[j] != decor.get(i).charAt(j))
-                        newline[j] = decor.get(i).charAt(j);
+                    if(newline.charAt(j) != decorline.charAt(j) && !Character.isWhitespace(decorline.charAt(j)) && decorline.charAt(j) != 0)
+                    {
+                        newline.setCharAt(j,decorline.charAt(j));
+                    }    
                 }
-                lines.set(i,newline.toString());
+                lines.set(i,new String(newline));
             }
         }
     }

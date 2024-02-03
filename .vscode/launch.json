@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SpellingDriver",
+            "request": "launch",
+            "mainClass": "spelling.SpellingDriver",
+            "projectName": "DesignPatternsCSCE247_a7e9065f"
+        },
+        {
+            "type": "java",
             "name": "VideoGameDriver",
             "request": "launch",
             "mainClass": "decorator.VideoGameDriver",

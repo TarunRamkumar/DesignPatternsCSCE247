@@ -8,39 +8,41 @@ public class SpellingList {
 
     public SpellingList()
     {
-        
+        state = firstGradeState = new FirstGradeState(this);
+        secondGradeState = new SecondGradeState(this);
+        thirdGradeState = new ThirdGradeState(this);
     }
 
     public String getNextWord()
     {
-
+        return state.getNextWord();
     }
 
     public void increaseGrade()
     {
-
+        state.increaseGrade();
     }
 
     public void decreaseGrade()
     {
-
+        state.decreaseGrade();
     }
 
-    public void getFirstGradeState()
+    public State getFirstGradeState()
     {
-
+        return this.firstGradeState;
     }
-    public void getSecondGradeState()
+    public State getSecondGradeState()
     {
-        
+        return this.secondGradeState;
     }
-    public void getThirdGradeState()
+    public State getThirdGradeState()
     {
-
+        return this.thirdGradeState;
     }
 
     public void setState(State state)
     {
-
+        this.state = state;
     }
 }

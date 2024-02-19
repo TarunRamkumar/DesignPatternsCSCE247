@@ -2,7 +2,7 @@ package iterator;
 
 import java.util.ArrayList;
 
-public class MasterDriver {
+public class Driver {
 	public void run() {
 		SCRUMBoard board = new SCRUMBoard("Recipe Application");
 		board.addTicket("Create Git Repo", "Katie", 0);
@@ -14,14 +14,14 @@ public class MasterDriver {
 
 		board.startTicket("Create Git Repo");
 		board.finishTicket("Create Git Repo");
-		board.startTicket("Create all JSON FIles");
+		board.startTicket("Create all JSON Files");
 		board.startTicket("Create Recipe Stub");
 
 		System.out.println(board);
 	}
 
 	public static void main(String[] args) {
-		MasterDriver driver = new MasterDriver();
+		Driver driver = new Driver();
 		driver.run();
 	}
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Driver",
+            "request": "launch",
+            "mainClass": "iterator.Driver",
+            "projectName": "DesignPatternsCSCE247_2dd1e2ad"
+        },
+        {
+            "type": "java",
             "name": "UI",
             "request": "launch",
             "mainClass": "UI",
